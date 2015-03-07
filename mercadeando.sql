@@ -1,0 +1,467 @@
+-- phpMyAdmin SQL Dump
+-- version 4.2.11
+-- http://www.phpmyadmin.net
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 07-03-2015 a las 06:55:42
+-- Versión del servidor: 5.6.21
+-- Versión de PHP: 5.6.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Base de datos: `mercadeando`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comprador`
+--
+
+CREATE TABLE IF NOT EXISTS `comprador` (
+`id` int(11) NOT NULL,
+  `nombre` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `apellidos` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `direccion` text COLLATE utf8_spanish_ci NOT NULL,
+  `telefono` int(11) NOT NULL,
+  `lat` float(10,6) NOT NULL,
+  `lon` float(10,6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `mandadero`
+--
+
+CREATE TABLE IF NOT EXISTS `mandadero` (
+`id` int(11) NOT NULL,
+  `nombre` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `apellidos` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `telefono` int(11) NOT NULL,
+  `lat` float(10,6) NOT NULL,
+  `lon` float(10,6) NOT NULL,
+  `total_eval` int(11) NOT NULL,
+  `n_eval` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `mercados`
+--
+
+CREATE TABLE IF NOT EXISTS `mercados` (
+  `id` varchar(6) DEFAULT NULL,
+  `nombre` varchar(45) DEFAULT NULL,
+  `fid` varchar(3) DEFAULT NULL,
+  `locales` varchar(7) DEFAULT NULL,
+  `tipo` varchar(4) DEFAULT NULL,
+  `tipo_des` varchar(25) DEFAULT NULL,
+  `lat` float(10,6) DEFAULT NULL,
+  `lon` float(10,6) DEFAULT NULL,
+  `delegacion` varchar(10) DEFAULT NULL,
+  `del_nombre` varchar(19) DEFAULT NULL,
+  `actualizado` varchar(19) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `mercados`
+--
+
+INSERT INTO `mercados` (`id`, `nombre`, `fid`, `locales`, `tipo`, `tipo_des`, `lat`, `lon`, `delegacion`, `del_nombre`, `actualizado`) VALUES
+('numero', 'nombre', 'fid', 'locales', 'tipo', 'tipo_desc', 0.000000, 0.000000, 'delegacion', 'delegacion_nombre', 'actualizado'),
+('1', 'CENTENARIO', '103', '86', '3', 'Tradicional', 19.360609, -99.227417, '1', 'ALVARO OBREGON', '2013-11-26 21:30:50'),
+('2', 'CORPUS CRISTY', '104', '87', '3', 'Tradicional', 19.361290, -99.248672, '1', 'ALVARO OBREGON', '2013-11-26 21:30:50'),
+('3', 'CRISTO REY', '136', '118', '3', 'Tradicional', 19.389940, -99.202103, '1', 'ALVARO OBREGON', '2013-11-26 21:30:50'),
+('4', 'JALALPA EL GRANDE', '106', '61', '3', 'Tradicional', 19.368330, -99.244171, '1', 'ALVARO OBREGON', '2013-11-26 21:30:50'),
+('5', 'JOSE MARIA PINO SUAREZ', '150', '200', '3', 'Tradicional', 19.397579, -99.198021, '1', 'ALVARO OBREGON', '2013-11-26 21:30:50'),
+('6', 'MARIA G. GARCIA DE RUIZ', '134', '97', '3', 'Tradicional', 19.389481, -99.211456, '1', 'ALVARO OBREGON', '2013-11-26 21:30:50'),
+('7', 'MELCHOR MUSQUIZ ZONA', '85', '327', '3', 'Tradicional', 19.343010, -99.191231, '1', 'ALVARO OBREGON', '2013-11-26 21:30:50'),
+('8', 'MELCHOR MUSQUIZ (FLORES)', '90', '34', '1', 'Especializado', 19.347191, -99.190048, '1', 'ALVARO OBREGON', '2013-11-26 21:30:50'),
+('9', 'MOLINO DE SANTO DOMINGO', '146', '94', '3', 'Tradicional', 19.394390, -99.208366, '1', 'ALVARO OBREGON', '2013-11-26 21:30:50'),
+('10', 'OLIVAR DEL CONDE', '113', '188', '3', 'Tradicional', 19.372021, -99.214027, '1', 'ALVARO OBREGON', '2013-11-26 21:30:50'),
+('11', 'PANTEON JARDIN (FLORES)', '91', '14', '1', 'Especializado', 19.347950, -99.207962, '1', 'ALVARO OBREGON', '2013-11-26 21:30:50'),
+('12', 'PUENTE COLORADO', '89', '43', '3', 'Tradicional', 19.347160, -99.231613, '1', 'ALVARO OBREGON', '2013-11-26 21:30:50'),
+('13', 'SANTA FE', '126', '177', '3', 'Tradicional', 19.381929, -99.240410, '1', 'ALVARO OBREGON', '2013-11-26 21:30:50'),
+('14', 'SANTA MARIA NONOALCO', '123', '106', '3', 'Tradicional', 19.379709, -99.193001, '1', 'ALVARO OBREGON', '2013-11-26 21:30:50'),
+('15', 'SEIS DE ENERO DE 1915', '114', '116', '3', 'Tradicional', 19.372219, -99.199783, '1', 'ALVARO OBREGON', '2013-11-26 21:30:50'),
+('16', 'TIZAPAN', '83', '128', '3', 'Tradicional', 19.341360, -99.197830, '1', 'ALVARO OBREGON', '2013-11-26 21:30:50'),
+('17', 'ARENAL', '269', '198', '3', 'Tradicional', 19.466270, -99.150711, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('18', 'AZCAPOTZALCO', '295', '546', '3', 'Tradicional', 19.482870, -99.185432, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('19', 'BENITO JUAREZ', '283', '123', '3', 'Tradicional', 19.475719, -99.176804, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('20', 'CLAVERIA', '267', '98', '3', 'Tradicional', 19.465000, -99.181152, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('21', 'COSMOPOLITA', '280', '135', '3', 'Tradicional', 19.475220, -99.161789, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('22', 'JARDIN 23 DE ABRIL', '293', '154', '3', 'Tradicional', 19.482361, -99.215317, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('23', 'JARDIN FORTUNA NACIONAL', '291', '71', '3', 'Tradicional', 19.480749, -99.205170, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('24', 'LAMINADORES', '290', '148', '3', 'Tradicional', 19.480320, -99.155861, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('25', 'NUEVA SANTA MARIA', '266', '126', '3', 'Tradicional', 19.464390, -99.169258, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('26', 'OBRERO POPULAR', '264', '125', '3', 'Tradicional', 19.463230, -99.173561, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('27', 'PANTACO', '278', '41', '1', 'Especializado', 19.474430, -99.171219, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('28', 'PASTEROS', '311', '122', '3', 'Tradicional', 19.496201, -99.197487, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('29', 'PROHOGAR', '284', '641', '3', 'Tradicional', 19.475840, -99.153549, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('30', 'PROVIDENCIA', '304', '143', '3', 'Tradicional', 19.491501, -99.213631, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('31', 'REYNOSA TAMAULIPAS', '306', '216', '3', 'Tradicional', 19.492140, -99.183922, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('32', 'SAN JUAN TLIHUACA', '307', '168', '3', 'Tradicional', 19.492950, -99.203377, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('33', 'SANTA LUCIA', '287', '150', '3', 'Tradicional', 19.476410, -99.196388, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('34', 'TLATILCO', '261', '155', '3', 'Tradicional', 19.462049, -99.162590, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('35', 'VICTORIA DE LAS DEMOCRACIAS', '272', '177', '3', 'Tradicional', 19.467590, -99.163063, '2', 'AZCAPOTZALCO', '2013-11-26 21:30:50'),
+('36', 'ALAMOS', '152', '269', '3', 'Tradicional', 19.398621, -99.144028, '3', 'BENITO JUAREZ', '2013-11-26 21:30:50'),
+('37', 'INDEPENDENCIA', '124', '226', '3', 'Tradicional', 19.380091, -99.150253, '3', 'BENITO JUAREZ', '2013-11-26 21:30:50'),
+('38', 'LA MODERNA', '145', '181', '3', 'Tradicional', 19.394119, -99.134010, '3', 'BENITO JUAREZ', '2013-11-26 21:30:50'),
+('39', 'LAGO', '125', '103', '3', 'Tradicional', 19.380760, -99.138893, '3', 'BENITO JUAREZ', '2013-11-26 21:30:50'),
+('40', 'LAZARO CARDENAS(DEL VALLE)', '149', '440', '3', 'Tradicional', 19.395639, -99.166183, '3', 'BENITO JUAREZ', '2013-11-26 21:30:50'),
+('41', 'MIXCOAC', '117', '476', '3', 'Tradicional', 19.372910, -99.188583, '3', 'BENITO JUAREZ', '2013-11-26 21:30:50'),
+('42', 'PORTALES ANEXO', '116', '125', '1', 'Especializado', 19.372740, -99.144112, '3', 'BENITO JUAREZ', '2013-11-26 21:30:50'),
+('43', 'PORTALES ZONA', '112', '599', '3', 'Tradicional', 19.371719, -99.143509, '3', 'BENITO JUAREZ', '2013-11-26 21:30:50'),
+('44', 'POSTAL ANEXO', '132', '49', '1', 'Especializado', 19.389151, -99.143867, '3', 'BENITO JUAREZ', '2013-11-26 21:30:50'),
+('45', 'POSTAL ZONA', '133', '247', '3', 'Tradicional', 19.389400, -99.144279, '3', 'BENITO JUAREZ', '2013-11-26 21:30:50'),
+('46', 'PRIMERO DE DICIEMBRE', '154', '244', '3', 'Tradicional', 19.399191, -99.154617, '3', 'BENITO JUAREZ', '2013-11-26 21:30:50'),
+('47', 'SAN PEDRO DE LOS PINOS', '139', '192', '3', 'Tradicional', 19.391840, -99.183510, '3', 'BENITO JUAREZ', '2013-11-26 21:30:50'),
+('48', 'SANTA CRUZ ATOYAC', '109', '101', '3', 'Tradicional', 19.370230, -99.160919, '3', 'BENITO JUAREZ', '2013-11-26 21:30:50'),
+('49', 'SANTA MARIA NATIVITAS', '130', '97', '3', 'Tradicional', 19.388121, -99.147301, '3', 'BENITO JUAREZ', '2013-11-26 21:30:50'),
+('50', 'TLACOQUEMÉCATL', '121', '109', '3', 'Tradicional', 19.377020, -99.174202, '3', 'BENITO JUAREZ', '2013-11-26 21:30:50'),
+('51', 'VEINTICUATRO DE AGOSTO', '137', '265', '3', 'Tradicional', 19.390120, -99.157562, '3', 'BENITO JUAREZ', '2013-11-26 21:30:50'),
+('52', 'AJUSCO MOCTEZUMA', '63', '232', '3', 'Tradicional', 19.313021, -99.162323, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('53', 'AJUSCO MONTSERRAT (LA BOLA)', '73', '233', '3', 'Tradicional', 19.323811, -99.157463, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('54', 'AVANTE', '74', '101', '3', 'Tradicional', 19.326160, -99.134933, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('55', 'BAZAR DEL ARTESANO MEXICANO', '96', '550', '1', 'Especializado', 19.350170, -99.163460, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('56', 'CARMEN SERDAN', '72', '116', '3', 'Tradicional', 19.320339, -99.106049, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('57', 'CHURUBUSCO', '95', '157', '3', 'Tradicional', 19.349770, -99.147057, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('58', 'COPILCO EL ALTO', '76', '68', '3', 'Tradicional', 19.331810, -99.170677, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('59', 'COYOACAN', '98', '464', '3', 'Tradicional', 19.352730, -99.161491, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('60', 'EDUCACION PETROLERA', '79', '78', '3', 'Tradicional', 19.336300, -99.131844, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('61', 'EL RELOJ', '69', '90', '3', 'Tradicional', 19.318680, -99.140533, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('62', 'EL VERDE', '65', '176', '3', 'Tradicional', 19.314659, -99.103912, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('63', 'EMILIANO ZAPATA', '66', '47', '3', 'Tradicional', 19.316410, -99.109772, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('64', 'HERMOSILLO', '86', '45', '3', 'Tradicional', 19.345989, -99.128418, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('65', 'LOS REYES COYOACAN', '77', '104', '3', 'Tradicional', 19.333521, -99.157944, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('66', 'MARGARITA MAZA DE JUAREZ', '64', '102', '3', 'Tradicional', 19.313040, -99.114601, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('67', 'PRADO CHURUBUSCO', '99', '117', '3', 'Tradicional', 19.354090, -99.125969, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('68', 'RUIZ CORTINEZ (LA CRUZ)', '70', '95', '3', 'Tradicional', 19.318720, -99.151337, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('69', 'SAN FRANCISCO CULHUACAN', '78', '235', '3', 'Tradicional', 19.336040, -99.123299, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('70', 'SANTA URSULA COAPA (PESCADITOS)', '60', '268', '3', 'Tradicional', 19.311769, -99.150330, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('71', 'SANTO DOMINGO LAS ROSAS', '75', '105', '3', 'Tradicional', 19.330950, -99.162933, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('72', 'SANTO DOMINGO LOS REYES', '71', '35', '3', 'Tradicional', 19.319691, -99.168770, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('73', 'XOTEPINGO', '82', '124', '3', 'Tradicional', 19.338079, -99.144547, '4', 'COYOACAN', '2013-11-26 21:30:50'),
+('74', 'CONTADERO', '92', '78', '3', 'Tradicional', 19.348240, -99.300659, '5', 'CUAJIMALPA', '2013-11-26 21:30:50'),
+('75', 'CUAJIMALPA', '101', '128', '3', 'Tradicional', 19.355570, -99.299309, '5', 'CUAJIMALPA', '2013-11-26 21:30:50'),
+('76', 'HUIZACHITO', '111', '8', '3', 'Tradicional', 19.371290, -99.280586, '5', 'CUAJIMALPA', '2013-11-26 21:30:50'),
+('77', 'ROSA TORRES', '108', '159', '3', 'Tradicional', 19.369909, -99.288879, '5', 'CUAJIMALPA', '2013-11-26 21:30:50'),
+('78', 'SAN MATEO TLALTENANGO', '84', '32', '3', 'Tradicional', 19.342270, -99.282463, '5', 'CUAJIMALPA', '2013-11-26 21:30:50'),
+('79', 'ABELARDO L. RODRIGUEZ (CORONAS)', '214', '151', '1', 'Especializado', 19.437811, -99.128288, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('80', 'ABELARDO L. RODRIGUEZ (ZONA)', '213', '246', '4', 'Tradicional y Turistico', 19.437229, -99.127953, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('81', 'BEETHOVEN', '256', '792', '3', 'Tradicional', 19.459410, -99.130096, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('82', 'BUGAMBILIA', '248', '201', '3', 'Tradicional', 19.453569, -99.152840, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('83', 'COLIMA', '158', '46', '3', 'Tradicional', 0.000000, 0.000000, '6', 'CUAHUTEMOC', '2013-11-27 00:00:00'),
+('84', 'CUAUHTEMOC', '205', '85', '3', 'Tradicional', 19.429680, -99.166878, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('85', 'DOS DE ABRIL', '215', '128', '3', 'Tradicional', 19.438410, -99.141609, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('86', 'FRANCISCO SARABIA', '252', '119', '3', 'Tradicional', 19.457960, -99.137306, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('87', 'HIDALGO ANEXO', '177', '428', '1', 'Especializado', 19.414700, -99.145737, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('88', 'HIDALGO ZONA', '175', '975', '3', 'Tradicional', 19.413839, -99.146088, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('89', 'INSURGENTES', '188', '225', '5', 'Turistico y Especializado', 19.424330, -99.165482, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('90', 'ISABEL LA CATOLICA', '161', '165', '3', 'Tradicional', 19.407009, -99.139320, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('91', 'JUAREZ', '195', '454', '3', 'Tradicional', 19.426140, -99.154579, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('92', 'LA DALIA', '245', '421', '3', 'Tradicional', 19.452209, -99.160088, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('93', 'LAGUNILLA ROPA Y TELAS', '226', '1043', '1', 'Especializado', 19.443159, -99.136322, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('94', 'LAGUNILLA SAN CAMILITO', '223', '75', '1', 'Especializado', 19.441971, -99.139030, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('95', 'LAGUNILLA VARIOS', '222', '344', '1', 'Especializado', 19.441839, -99.136612, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('96', 'LAGUNILLA ZONA', '229', '573', '3', 'Tradicional', 19.444019, -99.134651, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('97', 'MARTINEZ DE LA TORRE (ANEXO)', '233', '339', '1', 'Especializado', 19.445471, -99.145378, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('98', 'MARTINEZ DE LA TORRE (ZONA)', '232', '600', '3', 'Tradicional', 19.445210, -99.144287, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('99', 'MELCHOR OCAMPO', '167', '517', '3', 'Tradicional', 19.410400, -99.163490, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('100', 'MERCED MIXCALCO', '212', '920', '1', 'Especializado', 19.434380, -99.125099, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('101', 'MICHOACAN', '170', '35', '3', 'Tradicional', 19.411320, -99.174461, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('102', 'MORELIA', '164', '156', '3', 'Tradicional', 19.408560, -99.149788, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('103', 'PALACIO DE LAS FLORES', '207', '133', '5', 'Turistico y Especializado', 19.429770, -99.146049, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('104', 'PASAJE CHAPULTEPEC', '363', '45', '3', 'Tradicional', 0.000000, 0.000000, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('105', 'PAULINO  NAVARRO', '173', '110', '3', 'Tradicional', 19.412470, -99.128357, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('106', 'PEQUEÑO COMERCIO', '186', '84', '1', 'Especializado', 19.422489, -99.135788, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('107', 'SAN COSME', '221', '533', '3', 'Tradicional', 19.441820, -99.162247, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('108', 'SAN JOAQUIN (ANEXO)', '260', '275', '1', 'Especializado', 19.461969, -99.139061, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('109', 'SAN JOAQUIN ZONA (PERALVILLO)', '262', '477', '3', 'Tradicional', 19.462690, -99.139320, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('110', 'SAN JUAN ARCOS DE BELEM', '200', '399', '3', 'Tradicional', 19.427410, -99.142578, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('111', 'SAN JUAN CURIOSIDADES', '210', '176', '5', 'Turistico y Especializado', 19.430170, -99.143082, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('112', 'SAN JUAN PUGIBET', '209', '361', '3', 'Tradicional', 19.430031, -99.144600, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('113', 'SAN LUCAS', '191', '254', '3', 'Tradicional', 19.424940, -99.131088, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('114', 'TEPITO FIERROS VIEJOS', '237', '661', '1', 'Especializado', 19.447201, -99.128471, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('115', 'TEPITO ROPA Y TELAS (granaditas)', '225', '709', '1', 'Especializado', 19.442650, -99.129288, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('116', 'TEPITO VARIOS', '235', '562', '1', 'Especializado', 19.447121, -99.127327, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('117', 'TEPITO ZONA', '234', '522', '3', 'Tradicional', 19.446409, -99.127449, '6', 'CUAHUTEMOC', '2013-11-26 21:30:50'),
+('118', 'ALFREDO ROBLES DOMINGUEZ', '277', '61', '3', 'Tradicional', 19.471220, -99.135689, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('119', 'AMPLIACION CASAS ALEMAN', '286', '192', '3', 'Tradicional', 19.476299, -99.083832, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('120', 'AMPLIACION GABRIEL HERNANDEZ', '317', '78', '3', 'Tradicional', 19.505859, -99.099709, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('121', 'BONDOJITO', '268', '181', '3', 'Tradicional', 19.465710, -99.105751, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('122', 'CAMPESTRE ARAGON', '301', '137', '3', 'Tradicional', 19.485920, -99.078209, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('123', 'CARRERA LARDIZABAL', '294', '131', '3', 'Tradicional', 19.482519, -99.099709, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('124', 'CUATRO DE FEBRERO', '318', '120', '3', 'Tradicional', 19.506081, -99.091103, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('125', 'CUAUTEPEC', '323', '74', '3', 'Tradicional', 19.549410, -99.142899, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('126', 'CUCHILLA DEL TESORO', '239', '128', '3', 'Tradicional', 19.447611, -99.057419, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('127', 'DIEZ DE MAYO', '251', '390', '3', 'Tradicional', 19.456190, -99.104683, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('128', 'EMILIANO ZAPATA', '263', '301', '3', 'Tradicional', 19.463131, -99.113541, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('129', 'ESTRELLA', '281', '124', '3', 'Tradicional', 19.475630, -99.115829, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('130', 'FERNANDO CASAS ALEMAN', '247', '222', '3', 'Tradicional', 19.452681, -99.097267, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('131', 'FERROPLAZA', '292', '0', '3', 'Tradicional', 19.481730, -99.116173, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('132', 'GABRIEL HERNANDEZ', '313', '214', '3', 'Tradicional', 19.501060, -99.095047, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('133', 'GERTRUDIS SANCHEZ', '265', '215', '3', 'Tradicional', 19.464081, -99.101212, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('134', 'JUAN GONZALEZ ROMERO', '319', '201', '3', 'Tradicional', 19.506430, -99.090042, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('135', 'LINDAVISTA VALLEJO PATERA', '314', '86', '3', 'Tradicional', 19.501169, -99.152832, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('136', 'MA. ESTHER ZUNO DE ECHEVERRIA', '296', '90', '1', 'Especializado', 19.483259, -99.117119, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('137', 'MAGDALENA DE LAS SALINAS (NUEVA VALLEJO)', '300', '86', '3', 'Tradicional', 19.485121, -99.148712, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('138', 'MARTIN CARRERA', '302', '241', '3', 'Tradicional', 19.487061, -99.106972, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('139', 'MAXIMINO AVILA CAMACHO', '285', '130', '3', 'Tradicional', 19.475941, -99.137871, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('140', 'PANAMERICANA', '289', '430', '3', 'Tradicional', 19.477610, -99.145393, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('141', 'PRADERA', '282', '106', '3', 'Tradicional', 19.475670, -99.067543, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('142', 'PRIMERO DE SEPTIEMBRE', '271', '244', '3', 'Tradicional', 19.466490, -99.134613, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('143', 'PROGRESO NACIONAL', '321', '274', '3', 'Tradicional', 19.521870, -99.158821, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('144', 'PROVIDENCIA', '298', '193', '3', 'Tradicional', 19.484369, -99.070702, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('145', 'PUEBLO DE SAN JUAN DE ARAGON', '274', '64', '3', 'Tradicional', 19.468700, -99.084213, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('146', 'RAMON CORONA', '288', '458', '3', 'Tradicional', 19.477100, -99.124489, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('147', 'RIO BLANCO', '259', '454', '3', 'Tradicional', 19.461599, -99.112602, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('148', 'SALVADO DIAZ MIRON', '303', '150', '3', 'Tradicional', 19.487860, -99.099297, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('149', 'SAN BARTOLO ATEPEHUACAN', '305', '159', '3', 'Tradicional', 19.491779, -99.140610, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('150', 'SAN FELIPE DE JESUS', '308', '269', '3', 'Tradicional', 19.493570, -99.076561, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('151', 'SAN JUAN DE ARAGON UNIDAD 2', '250', '193', '3', 'Tradicional', 19.453960, -99.085609, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('152', 'SAN JUAN DE ARAGON UNIDAD 3', '244', '108', '3', 'Tradicional', 19.451799, -99.071747, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('153', 'SAN JUAN DE ARAGON UNIDAD 4 Y 5', '249', '232', '3', 'Tradicional', 19.453569, -99.065063, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('154', 'SAN JUAN DE ARAGON UNIDAD 6', '270', '169', '3', 'Tradicional', 19.466480, -99.065750, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('155', 'SAN JUAN DE ARAGON UNIDAD 7', '275', '190', '3', 'Tradicional', 19.470169, -99.075447, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('156', 'SAN JUAN DE ARAGON UNIDAD I', '257', '190', '3', 'Tradicional', 19.459700, -99.091751, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('157', 'SAN PEDRO EL CHICO', '273', '51', '3', 'Tradicional', 19.467871, -99.095657, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('158', 'SAN PEDRO ZACATENCO', '316', '111', '3', 'Tradicional', 19.505619, -99.125053, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('159', 'SANTA ISABEL TOLA', '312', '67', '3', 'Tradicional', 19.498810, -99.116791, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('160', 'SANTA MARIA TICOMAN', '320', '119', '3', 'Tradicional', 19.516310, -99.133301, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('161', 'SANTA ROSA', '322', '167', '3', 'Tradicional', 19.524590, -99.168694, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('162', 'TRES ESTRELLAS', '276', '122', '3', 'Tradicional', 19.471109, -99.111069, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('163', 'VASCO DE QUIROGA', '309', '212', '3', 'Tradicional', 19.494560, -99.094933, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('164', 'VEINTICINCO DE JULIO', '310', '249', '1', 'Especializado', 19.496140, -99.082619, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('165', 'VEINTICUATRO DE SEPTIEMBRE', '279', '78', '3', 'Tradicional', 19.474649, -99.062943, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('166', 'VICENTE GUERRERO (NUEVA ATZACOALCO)', '315', '386', '3', 'Tradicional', 19.501539, -99.085426, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('167', 'VILLA COMIDAS (VIEJO)', '299', '209', '1', 'Especializado', 19.484751, -99.113182, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('168', 'VILLA ZONA', '297', '938', '3', 'Tradicional', 19.483860, -99.115242, '7', 'GUSTAVO A MADERO', '2013-11-26 21:30:50'),
+('169', 'AGRICOLA ORIENTAL', '147', '344', '3', 'Tradicional', 19.395229, -99.075272, '8', 'IZTACALCO', '2013-11-26 21:30:50'),
+('170', 'APATLACO', '127', '131', '3', 'Tradicional', 19.382641, -99.119377, '8', 'IZTACALCO', '2013-11-26 21:30:50'),
+('171', 'BRAMADERO', '138', '278', '3', 'Tradicional', 19.391050, -99.094742, '8', 'IZTACALCO', '2013-11-26 21:30:50'),
+('172', 'EJIDOS DE LA MAGDALENA MIXHUCA', '142', '104', '3', 'Tradicional', 19.392241, -99.089211, '8', 'IZTACALCO', '2013-11-26 21:30:50'),
+('173', 'EL RODEO', '140', '68', '3', 'Tradicional', 19.391939, -99.085442, '8', 'IZTACALCO', '2013-11-26 21:30:50'),
+('174', 'IZTACALCO', '135', '102', '3', 'Tradicional', 19.389650, -99.121643, '8', 'IZTACALCO', '2013-11-26 21:30:50'),
+('175', 'JOSE LOPEZ PORTILLO', '172', '352', '3', 'Tradicional', 19.411720, -99.068336, '8', 'IZTACALCO', '2013-11-26 21:30:50'),
+('176', 'JUVENTINO ROSAS', '143', '208', '3', 'Tradicional', 19.393360, -99.106071, '8', 'IZTACALCO', '2013-11-26 21:30:50'),
+('177', 'LA CRUZ', '155', '249', '3', 'Tradicional', 19.402330, -99.117363, '8', 'IZTACALCO', '2013-11-26 21:30:50'),
+('178', 'LEANDRO VALLE', '131', '197', '3', 'Tradicional', 19.388531, -99.067039, '8', 'IZTACALCO', '2013-11-26 21:30:50'),
+('179', 'MILITAR MARTE', '128', '158', '3', 'Tradicional', 19.383030, -99.131104, '8', 'IZTACALCO', '2013-11-26 21:30:50'),
+('180', 'PANTITLAN CALLE 4', '169', '271', '3', 'Tradicional', 19.411150, -99.062210, '8', 'IZTACALCO', '2013-11-26 21:30:50'),
+('181', 'SAN MIGUEL IZTACALCO', '144', '90', '3', 'Tradicional', 19.393841, -99.114326, '8', 'IZTACALCO', '2013-11-26 21:30:50'),
+('182', 'SANTA ANITA', '151', '117', '3', 'Tradicional', 19.398500, -99.129387, '8', 'IZTACALCO', '2013-11-26 21:30:50'),
+('183', 'TLACOTAL', '148', '273', '3', 'Tradicional', 19.395470, -99.102737, '8', 'IZTACALCO', '2013-11-26 21:30:50'),
+('184', 'VEINTICUATRO DE DICIEMBRE', '157', '203', '3', 'Tradicional', 19.402719, -99.058510, '8', 'IZTACALCO', '2013-11-26 21:30:50'),
+('185', 'CONSTITUYENTES DE 1917', '93', '184', '3', 'Tradicional', 19.348709, -99.059410, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('186', 'CULHUACAN', '81', '109', '3', 'Tradicional', 19.337749, -99.108482, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('187', 'ESCUADRON 201', '105', '306', '3', 'Tradicional', 19.362459, -99.111992, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('188', 'FRANCISCO VILLA', '80', '104', '3', 'Tradicional', 19.337330, -99.058540, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('189', 'GUADALUPE DEL MORAL', '110', '118', '3', 'Tradicional', 19.371140, -99.076523, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('190', 'IZTAPALAPA', '102', '200', '3', 'Tradicional', 19.360340, -99.091263, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('191', 'JACARANDAS', '88', '86', '3', 'Tradicional', 19.347080, -99.051140, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('192', 'JUAN DE LA BARRERA', '141', '174', '3', 'Tradicional', 19.392191, -99.044090, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('193', 'LA PURISIMA', '100', '121', '3', 'Tradicional', 19.354561, -99.074371, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('194', 'PROGRESO DEL SUR', '97', '135', '3', 'Tradicional', 19.350491, -99.109329, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('195', 'SAN ANDRES TETEPILCO', '115', '207', '3', 'Tradicional', 19.372410, -99.130096, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('196', 'SAN JOSE ACULCO', '119', '121', '3', 'Tradicional', 19.374910, -99.102699, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('197', 'SAN JUANICO', '118', '108', '3', 'Tradicional', 19.373690, -99.119789, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('198', 'SAN LORENZO TEZONCO', '59', '196', '3', 'Tradicional', 19.310631, -99.071953, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('199', 'SAN LORENZO XICOTENCATL', '129', '105', '3', 'Tradicional', 19.383369, -99.027191, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('200', 'SANTA CRUZ MEYEHUALCO', '87', '146', '3', 'Tradicional', 19.346060, -99.044037, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('201', 'SANTA MARIA AZTAHUACAN', '94', '106', '3', 'Tradicional', 19.349710, -99.023262, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('202', 'SECTOR POPULAR', '107', '221', '3', 'Tradicional', 19.368641, -99.119392, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('203', 'SIFON', '122', '156', '3', 'Tradicional', 19.377550, -99.110733, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('204', 'VEINTICUATRO DE FEBRERO', '120', '124', '3', 'Tradicional', 19.376539, -99.071289, '9', 'IZTAPALAPA', '2013-11-26 21:30:50'),
+('205', 'CERRO DEL JUDIO', '68', '91', '3', 'Tradicional', 19.318489, -99.245667, '10', 'MAGDALENA CONTRERAS', '2013-11-26 21:30:50'),
+('206', 'CONTRERAS LA CRUZ', '58', '96', '3', 'Tradicional', 19.305479, -99.234558, '10', 'MAGDALENA CONTRERAS', '2013-11-26 21:30:50'),
+('207', 'MAGDALENA CONTRERAS (LA LOMA)', '57', '90', '3', 'Tradicional', 19.305450, -99.239326, '10', 'MAGDALENA CONTRERAS', '2013-11-26 21:30:50'),
+('208', 'TIHUATLAN', '67', '38', '3', 'Tradicional', 19.318090, -99.225456, '10', 'MAGDALENA CONTRERAS', '2013-11-26 21:30:50'),
+('209', 'TURISTICO MAGDALENA', '56', '39', '5', 'Turistico y Especializado', 19.302521, -99.246071, '10', 'MAGDALENA CONTRERAS', '2013-11-26 21:30:50'),
+('210', 'AMERICA', '159', '307', '3', 'Tradicional', 19.404909, -99.201981, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('211', 'ANAHUAC ANEXO', '218', '280', '1', 'Especializado', 19.440241, -99.170311, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('212', 'ANAHUAC ZONA', '219', '412', '3', 'Tradicional', 19.440750, -99.169968, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('213', 'ARGENTINA', '246', '964', '3', 'Tradicional', 19.452591, -99.201927, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('214', 'DIECIOCHO DE MARZO', '238', '335', '3', 'Tradicional', 19.447241, -99.194519, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('215', 'ESCANDON', '156', '249', '3', 'Tradicional', 19.402660, -99.177406, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('216', 'GRANADA', '220', '148', '3', 'Tradicional', 19.441820, -99.192368, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('217', 'ING. GONZALO PEÑA MANTEROLA (CARTAGENA)', '158', '700', '3', 'Tradicional', 19.402809, -99.188889, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('218', 'LAGO GARDA', '240', '319', '3', 'Tradicional', 19.450050, -99.186028, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('219', 'LAGO GASCASONICA', '258', '374', '3', 'Tradicional', 19.461430, -99.191902, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('220', 'MONTE ATHOS', '180', '63', '3', 'Tradicional', 19.419250, -99.214737, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('221', 'PLUTARCO ELIAS CALLES       (EL CHORRITO)', '168', '361', '3', 'Tradicional', 19.410589, -99.190308, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('222', 'PRADO NORTE', '199', '122', '3', 'Tradicional', 19.427340, -99.212440, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('223', 'PRADO SUR', '183', '23', '3', 'Tradicional', 19.421640, -99.209267, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('224', 'SAN ISIDRO ANEXO', '206', '38', '1', 'Especializado', 19.429720, -99.221657, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('225', 'SAN ISIDRO ZONA', '208', '51', '3', 'Tradicional', 19.429840, -99.220757, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('226', 'TACUBA', '254', '1231', '3', 'Tradicional', 19.458111, -99.186653, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('227', 'TACUBAYA', '153', '512', '3', 'Tradicional', 19.398670, -99.187187, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('228', 'ZACATITO', '253', '182', '3', 'Tradicional', 19.457970, -99.207748, '11', 'MIGUEL HIDALGO', '2013-11-26 21:30:50'),
+('229', 'BENITO JUAREZ  (ANEXO)', '4', '207', '3', 'Tradicional', 19.192160, -99.021317, '12', 'MILPA ALTA', '2013-11-26 21:30:50'),
+('230', 'BENITO JUAREZ (MILPA ALTA)', '2', '207', '3', 'Tradicional', 19.191481, -99.021347, '12', 'MILPA ALTA', '2013-11-26 21:30:50'),
+('231', 'SAN ANTONIO TECOMITL', '9', '83', '3', 'Tradicional', 19.217279, -98.989594, '12', 'MILPA ALTA', '2013-11-26 21:30:50'),
+('232', 'SAN BARTOLOME XICOMULCO', '7', '0', '2', 'Regional', 19.205770, -99.070580, '12', 'MILPA ALTA', '2013-11-26 21:30:50'),
+('233', 'SAN PABLO OZTOTEPEC', '1', '74', '3', 'Tradicional', 19.184790, -99.071419, '12', 'MILPA ALTA', '2013-11-26 21:30:50'),
+('234', 'SAN PEDRO ATOCPAN', '6', '20', '3', 'Tradicional', 19.201469, -99.050293, '12', 'MILPA ALTA', '2013-11-26 21:30:50'),
+('235', 'SAN SALVADOR CUAUHTENCO (DOCE DE OCTUBRE', '5', '23', '3', 'Tradicional', 19.192181, -99.089508, '12', 'MILPA ALTA', '2013-11-26 21:30:50'),
+('236', 'SANTA ANA TLACOTENCO', '0', '19', '3', 'Tradicional', 19.176100, -98.998253, '12', 'MILPA ALTA', '2013-11-26 21:30:50'),
+('237', 'VILLA MILPA ALTA (MERCADO ANTOJITOS)', '3', '23', '1', 'Especializado', 19.191851, -99.021332, '12', 'MILPA ALTA', '2013-11-26 21:30:50'),
+('238', 'ABRAHAM DEL LLANO (NOPALERA)', '48', '87', '3', 'Tradicional', 19.296579, -99.054207, '13', 'TLAHUAC', '2013-11-26 21:30:50'),
+('239', 'AGRICOLA METROPOLITANA (FELIPE ASTORGA OCHOA)', '40', '44', '3', 'Tradicional', 19.289801, -99.052971, '13', 'TLAHUAC', '2013-11-26 21:30:50'),
+('240', 'AMPLIACION SELENE', '34', '71', '3', 'Tradicional', 19.284870, -98.995010, '13', 'TLAHUAC', '2013-11-26 21:30:50'),
+('241', 'CENTRAL DE TLAHUAC', '24', '148', '3', 'Tradicional', 19.268570, -99.004791, '13', 'TLAHUAC', '2013-11-26 21:30:50'),
+('242', 'DEL MAR', '35', '111', '3', 'Tradicional', 19.287100, -99.059891, '13', 'TLAHUAC', '2013-11-26 21:30:50'),
+('243', 'EMILIANO ZAPATA (TETELCO)', '8', '24', '3', 'Tradicional', 19.209070, -98.970123, '13', 'TLAHUAC', '2013-11-26 21:30:50'),
+('244', 'ESTACION', '0', '0', '1', 'Tradicional', 0.000000, 0.000000, '13', 'TLAHUAC', '2013-11-27 00:00:00'),
+('245', 'LOS OLIVOS', '49', '94', '3', 'Tradicional', 19.296810, -99.061699, '13', 'TLAHUAC', '2013-11-26 21:30:50'),
+('246', 'MIGUEL HIDALGO', '43', '48', '3', 'Tradicional', 19.293470, -99.046318, '13', 'TLAHUAC', '2013-11-26 21:30:50'),
+('247', 'MIXQUIC', '10', '102', '5', 'Turistico y Especializado', 19.223869, -98.961807, '13', 'TLAHUAC', '2013-11-26 21:30:50'),
+('248', 'SAN JOSE', '30', '48', '3', 'Tradicional', 19.275869, -98.996078, '13', 'TLAHUAC', '2013-11-26 21:30:50'),
+('249', 'SAN JUAN IXTAYOPAN', '11', '79', '3', 'Tradicional', 19.244011, -98.995018, '13', 'TLAHUAC', '2013-11-26 21:30:50'),
+('250', 'SANTA CATARINA', '62', '51', '3', 'Tradicional', 19.312901, -98.966293, '13', 'TLAHUAC', '2013-11-26 21:30:50'),
+('251', 'SANTA CECILIA', '31', '61', '3', 'Tradicional', 19.278419, -99.005882, '13', 'TLAHUAC', '2013-11-26 21:30:50'),
+('252', 'SELENE', '38', '112', '3', 'Tradicional', 19.288879, -99.005966, '13', 'TLAHUAC', '2013-11-26 21:30:50'),
+('253', 'TIPICO REGIONAL', '25', '26', '1', 'Especializado', 19.268570, -99.004829, '13', 'TLAHUAC', '2013-11-26 21:30:50'),
+('254', 'TLALTENCO (SAN FRANCISCO)', '47', '117', '3', 'Tradicional', 19.295719, -99.014862, '13', 'TLAHUAC', '2013-11-26 21:30:50'),
+('255', 'ZAPOTITLA', '61', '104', '3', 'Tradicional', 19.312670, -99.038170, '13', 'TLAHUAC', '2013-11-26 21:30:50'),
+('256', 'ZAPOTITLAN', '44', '67', '3', 'Tradicional', 19.294840, -99.036682, '13', 'TLAHUAC', '2013-11-26 21:30:50'),
+('257', 'ARTESANIAS VASCO DE QUIROGA', '46', '132', '1', 'Especializado', 19.295280, -99.184921, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('258', 'COMIDAS HUIPULCO', '55', '23', '1', 'Especializado', 19.302521, -99.146461, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('259', 'DR. Y GRAL JOSE GONZALEZ VARELA', '22', '58', '3', 'Tradicional', 19.265310, -99.169319, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('260', 'FLORES SAN FERNANDO', '39', '76', '1', 'Especializado', 19.289700, -99.162247, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('261', 'FUENTES BROTANTES', '33', '26', '5', 'Turistico y Especializado', 19.284410, -99.181389, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('262', 'HUESO PERIFERICO', '52', '102', '3', 'Tradicional', 19.299540, -99.102867, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('263', 'ISIDRO FABELA', '53', '60', '3', 'Tradicional', 19.300480, -99.177429, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('264', 'JOSE MARIA MORELOS Y PAVON', '51', '56', '3', 'Tradicional', 19.297791, -99.118431, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('265', 'LA PAZ', '37', '141', '4', 'Tradicional y Turistico', 19.287979, -99.167099, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('266', 'LAZARO CARDENAS', '50', '72', '3', 'Tradicional', 19.297741, -99.138931, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('267', 'MIGUEL HIDALGO', '36', '72', '3', 'Tradicional', 19.287670, -99.184700, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('268', 'MIRADOR', '45', '90', '3', 'Tradicional', 19.294960, -99.226143, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('269', 'PLAZA MEXICANA DEL SUR', '54', '79', '3', 'Tradicional', 19.300550, -99.146042, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('270', 'SAN ANDRES TOTOLTEPEC', '15', '51', '3', 'Tradicional', 19.251511, -99.172310, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('271', 'SAN NICOLAS TOTOLAPAN', '41', '32', '3', 'Tradicional', 19.291910, -99.236397, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('272', 'TLALCOLIGIA', '29', '70', '3', 'Tradicional', 19.275080, -99.171768, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('273', 'TORRES DE PADIERNA', '32', '58', '3', 'Tradicional', 19.282330, -99.228210, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('274', 'VEINTICUATRO DE FEBRERO', '28', '53', '3', 'Tradicional', 19.274639, -99.225471, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('275', 'VEINTIUNO DE ABRIL', '27', '65', '3', 'Tradicional', 19.271210, -99.223862, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('276', 'VILLA COAPA', '42', '167', '3', 'Tradicional', 19.292040, -99.126831, '14', 'TLALPAN', '2013-11-26 21:30:50'),
+('277', 'ADOLFO LOPEZ MATEOS', '182', '211', '3', 'Tradicional', 19.421209, -99.072762, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('278', 'ALVARO OBREGON', '171', '211', '3', 'Tradicional', 19.411360, -99.117859, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('279', 'AQUILES SERDAN', '236', '222', '3', 'Tradicional', 19.447121, -99.092323, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('280', 'ARENAL 4a SECCION', '203', '199', '3', 'Tradicional', 19.428310, -99.056458, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('281', 'AVIACION CIVIL', '176', '124', '3', 'Tradicional', 19.414200, -99.077713, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('282', 'CALZADO LA CENTRAL', '242', '172', '1', 'Especializado', 19.450970, -99.112503, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('283', 'DEL PARQUE', '179', '106', '3', 'Tradicional', 19.416161, -99.120956, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('284', 'EMILIO CARRANZA', '224', '126', '3', 'Tradicional', 19.442400, -99.118729, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('285', 'FEDERAL', '181', '103', '3', 'Tradicional', 19.420401, -99.089378, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('286', 'IGNACIO ZARAGOZA', '174', '428', '3', 'Tradicional', 19.412540, -99.091438, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('287', 'JAMAICA COMIDAS', '160', '66', '1', 'Especializado', 19.406719, -99.122368, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('288', 'JAMAICA NUEVO', '163', '1312', '1', 'Especializado', 19.407749, -99.123047, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('289', 'JAMAICA ZONA', '165', '562', '3', 'Tradicional', 19.408581, -99.122780, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('290', 'JARDIN BALBUENA', '178', '133', '3', 'Tradicional', 19.415710, -99.100891, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('291', 'LIC. OCTAVIO SENTIES', '231', '40', '3', 'Tradicional', 19.444880, -99.107803, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('292', 'LUIS PRECIADO DE LA TORRE', '204', '132', '3', 'Tradicional', 19.428370, -99.106110, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('293', 'MERCED AMPUDIA', '197', '151', '1', 'Especializado', 19.427191, -99.125214, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('294', 'MERCED ANEXO', '189', '186', '1', 'Especializado', 19.424450, -99.124939, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('295', 'MERCED BANQUETON', '0', '0', '3', 'Tradicional', 0.000000, 0.000000, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('296', 'MERCED COMIDAS', '198', '218', '1', 'Especializado', 19.427299, -99.122818, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('297', 'MERCED FLORES', '194', '110', '1', 'Especializado', 19.426060, -99.125061, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('298', 'MERCED NAVE MAYOR', '196', '4200', '3', 'Tradicional', 19.426180, -99.123810, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('299', 'MERCED NAVE MENOR', '192', '647', '1', 'Especializado', 19.425480, -99.122673, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('300', 'MERCED PASO A DESNIVEL', '193', '77', '1', 'Especializado', 19.425579, -99.123390, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('301', 'MINILLAS', '241', '225', '1', 'Especializado', 19.450251, -99.115242, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('302', 'MOCTEZUMA', '211', '526', '3', 'Tradicional', 19.432230, -99.097038, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('303', 'MORELOS', '217', '912', '3', 'Tradicional', 19.439831, -99.114754, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('304', 'NUEVO SAN LAZARO', '162', '78', '1', 'Especializado', 19.407471, -99.114822, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('305', 'PANTITLAN ARENAL', '187', '143', '3', 'Tradicional', 19.423500, -99.065086, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('307', 'PENSADOR MEXICANO', '227', '156', '3', 'Tradicional', 19.443951, -99.086967, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('308', 'PEÑON DE LOS BAÑOS', '216', '101', '3', 'Tradicional', 19.439610, -99.084991, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('309', 'PLAN DE AYALA CARACOL', '202', '96', '3', 'Tradicional', 19.428061, -99.069550, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('310', 'PUEBLA', '166', '281', '3', 'Tradicional', 19.410290, -99.082977, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('311', 'ROMERO RUBIO', '228', '639', '3', 'Tradicional', 19.443991, -99.099373, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('312', 'SANTA JUANITA', '230', '107', '3', 'Tradicional', 19.444780, -99.108040, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('313', 'SONORA', '185', '407', '1', 'Especializado', 19.422251, -99.124634, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('314', 'SONORA ANEXO', '184', '271', '1', 'Especializado', 19.421709, -99.124443, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('315', 'UNIDAD KENNEDY', '190', '182', '3', 'Tradicional', 19.424660, -99.108620, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('316', 'UNIDAD RASTRO', '243', '717', '3', 'Tradicional', 19.451031, -99.110588, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('317', 'VALLE GOMEZ', '255', '203', '3', 'Tradicional', 19.459110, -99.121773, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('318', 'VEINTE DE ABRIL', '201', '272', '3', 'Tradicional', 19.427620, -99.097641, '15', 'VENUSTIANO CARRANZA', '2013-11-26 21:30:50'),
+('319', 'AHUALAPA', '13', '33', '3', 'Tradicional', 19.247110, -99.070442, '16', 'XOCHIMILCO', '2013-11-26 21:30:50'),
+('320', 'AMPLIACION SAN MARCOS', '26', '91', '3', 'Tradicional', 19.268990, -99.113449, '16', 'XOCHIMILCO', '2013-11-26 21:30:50'),
+('321', 'AMPLIACION TEPEPAN', '23', '60', '3', 'Tradicional', 19.266350, -99.133614, '16', 'XOCHIMILCO', '2013-11-26 21:30:50'),
+('322', 'GUADALUPE I. RAMIREZ', '21', '25', '1', 'Especializado', 19.264090, -99.105370, '16', 'XOCHIMILCO', '2013-11-26 21:30:50'),
+('323', 'NATIVITAS', '14', '296', '5', 'Turistico y Especializado', 19.250629, -99.094269, '16', 'XOCHIMILCO', '2013-11-26 21:30:50'),
+('324', 'SAN GREGORIO ATLAPULCO', '17', '136', '3', 'Tradicional', 19.255119, -99.057449, '16', 'XOCHIMILCO', '2013-11-26 21:30:50'),
+('325', 'SANTA CRUZ ACALPIXCA', '12', '50', '3', 'Tradicional', 19.246071, -99.075157, '16', 'XOCHIMILCO', '2013-11-26 21:30:50'),
+('326', 'TIERRA NUEVA', '20', '74', '3', 'Tradicional', 19.264009, -99.116058, '16', 'XOCHIMILCO', '2013-11-26 21:30:50'),
+('327', 'TULYEHUALCO', '16', '118', '3', 'Tradicional', 19.254700, -99.011452, '16', 'XOCHIMILCO', '2013-11-26 21:30:50'),
+('328', 'XOCHIMILCO ANEXO', '18', '968', '3', 'Tradicional', 19.260950, -99.104309, '16', 'XOCHIMILCO', '2013-11-26 21:30:50'),
+('329', 'XOCHIMILCO ZONA (XOCHITL)', '19', '447', '3', 'Tradicional', 19.262329, -99.104050, '16', 'XOCHIMILCO', '2013-11-26 21:30:50');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pedido`
+--
+
+CREATE TABLE IF NOT EXISTS `pedido` (
+`id` int(11) NOT NULL,
+  `comprador` int(11) NOT NULL,
+  `pedido` text COLLATE utf8_spanish_ci NOT NULL,
+  `mandadero` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `comprador`
+--
+ALTER TABLE `comprador`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `mandadero`
+--
+ALTER TABLE `mandadero`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `pedido`
+--
+ALTER TABLE `pedido`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `comprador`
+--
+ALTER TABLE `comprador`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `mandadero`
+--
+ALTER TABLE `mandadero`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `pedido`
+--
+ALTER TABLE `pedido`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
